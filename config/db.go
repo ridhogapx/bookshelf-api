@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-var dsn string = "root:@tcp(127.0.0.1:3306)/learngin?charset=utf8mb4&parseTime=True&loc=Local"
+var dsn string = "root:@tcp(127.0.0.1:3306)/bookshelf?charset=utf8mb4&parseTime=True&loc=Local"
 var DB *gorm.DB
 
 func init() {
@@ -19,4 +19,8 @@ func init() {
 	}
 
 	DB.AutoMigrate(&model.User{})
+}
+
+func Msg() string {
+	return "Migrating database..."
 }
