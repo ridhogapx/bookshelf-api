@@ -1,6 +1,8 @@
 package config
 
 import (
+	"bookshelf-api/model"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -15,4 +17,6 @@ func init() {
 	if err != nil {
 		panic("Failed to connect database!")
 	}
+
+	DB.AutoMigrate(model.User)
 }
