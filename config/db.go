@@ -18,5 +18,5 @@ func init() {
 		panic("Failed to connect database!")
 	}
 
-	DB.AutoMigrate(model.User)
+	DB.AutoMigrate(&model.User{})
 }
